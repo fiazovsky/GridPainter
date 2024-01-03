@@ -6,10 +6,14 @@ public class Grid {
     private int rows;
     private int cols;
     private Cell[][] grid;
+    private int gridWidth;
+    private int gridHeight;
 
     public Grid(int rows, int cols){
         this.rows = rows;
         this.cols = cols;
+        gridWidth = rows * cellSize;
+        gridHeight = cols * cellSize;
         grid = new Cell[rows][cols];
         drawGrid(rows, cols);
     }
@@ -22,6 +26,14 @@ public class Grid {
         return padding;
     }
 
+    public int getGridWidth() {
+        return gridWidth;
+    }
+
+    public int getGridHeight() {
+        return gridHeight;
+    }
+
     public void drawGrid(int rows, int cols){
         for(int i = 0; i < rows; i++){
             for(int j = 0; j < cols; j++){
@@ -30,4 +42,15 @@ public class Grid {
         }
     }
 
+    public Cell getCurrentCell(int row, int col){
+        return grid[row][col];
+    }
+
+    public int getRows() {
+        return rows;
+    }
+
+    public int getCols() {
+        return cols;
+    }
 }

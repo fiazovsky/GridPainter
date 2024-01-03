@@ -1,7 +1,6 @@
 package org.fiazovsky.gridpainter;
+import org.academiadecodigo.simplegraphics.graphics.Color;
 import org.academiadecodigo.simplegraphics.graphics.Rectangle;
-
-import java.awt.*;
 
 import static org.fiazovsky.gridpainter.Grid.*;
 
@@ -18,14 +17,20 @@ public class Cell {
         gridSquare.draw();
     }
 
-    public void paintSquare(){
+    public void paintCell(){
         isPainted = true;
+        gridSquare.setColor(Color.BLACK);
         gridSquare.fill();
     }
 
-    public void deleteSquare(){
+    public void deleteCell(){
         isPainted = false;
+        gridSquare.setColor(Color.BLACK);
         gridSquare.draw();
+    }
+
+    public boolean isPainted() {
+        return isPainted;
     }
 
 }
